@@ -4,7 +4,7 @@ const cursos = [
   {id: 3, name: 'tres'},
 ]
 
-const id = 1;
+const id = 2;
 
 console.log(cursos[1])
 
