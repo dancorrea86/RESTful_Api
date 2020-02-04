@@ -24,25 +24,12 @@ app.get('/api/courses/:id',  (req, res) => {
 });
 
 app.post('/api/courses', (req, res) => {
-  const schema = Joi.object().keys({
-    name: Joi.string().min(3).required(), 
-  });
-  
-
-  const result = Joi.validate(schema, name)
-
-  if (!result) {
-    // 400 Bad Request
-    res.status(400).send(result.error)
-    return;
-  }
-
   const course = {
     id: courses.length + 1,
-    name: req.body.name,
-  };
-  courses.push(courses);
-  res.send(course);
+    name: req.body.name
+  }
+  courses.push(course);
+  res.send(course)
 });
 
 const port = process.env.PORT || 3000;
